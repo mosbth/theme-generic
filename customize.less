@@ -1,0 +1,299 @@
+/** --------------------------------------------------------------
+ * Make your own custom style.
+ *
+ */
+
+/** ==============================================================
+ * Base
+ */
+@bgColorHtml: #424242;
+@bgColorBody: #fff;
+
+html {
+    background-color: @bgColorHtml;
+}
+
+body {
+    background-color: @bgColorBody;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+@fontFamilyHeadings:  @fontFamilyCambria;
+@fontFamilyBody:      @fontFamilyHelveticaNeue;
+
+
+
+/** ==============================================================
+ * Header 
+ */
+@bgColorHeader: #323232;
+@colorHeader: #ffffff;
+@bgColorHeaderBorder: #666;
+
+.outer-wrap-header {
+    background-color: @bgColorHeader;
+    border-top: 8px solid @bgColorHeaderBorder;
+    border-bottom: 6px solid @bgColorHeaderBorder;
+    color: @colorHeader;
+    height: @magicNumber * 2;
+    margin-bottom: @magicNumber;
+
+    a {
+        color: @colorHeader;
+    }
+ }
+
+.site-logo {
+    .column(6);
+    position: relative;
+}
+
+.navbar2 {
+    .column(16);
+    font-family: @fontFamilyHelvetica;
+}
+
+.search {
+    .column(2);
+    padding-top: 0.5em;
+    text-align: right;
+}
+
+
+
+/** ==============================================================
+ * Logo
+ *
+ */
+.site-logo-text {
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: 2px;
+    left: 4px;
+    letter-spacing: 4px;
+    font-size: 28px;
+    font-family: @fontFamilyMonospace;
+    text-shadow: 2px -2px 2px @bgColorHeaderBorder;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-shadow: 2px -2px 2px lighten(@bgColorHeaderBorder, 20%);
+        }
+    }
+}
+
+
+
+/** ==============================================================
+ * Navbar
+ *
+ */
+@navbarBgColor:             none;
+@navbarItemColor:           #333;
+@navbarItemHoverColor:      #fff;
+@navbarItemHoverBgColor:    #666;
+
+.rm-navbar {
+}
+
+.rm-default {
+    position: relative;
+    top: -2px;
+    text-align: right;
+
+    a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+
+
+/** ==============================================================
+ * Main
+ *
+ */
+.inner-wrap-main {
+    padding-bottom: @magicNumber * 2;
+}
+
+.sidebar-left {
+    .column(6);
+    //.push(1);
+
+    &.has-sidebar-right {
+        .column(6);
+    }
+}
+
+.sidebar-right {
+    .column(5);
+    .push(1);
+
+    &.has-sidebar-left {
+        .column(6);
+    }
+}
+
+.main {
+    min-height: @magicNumber * 20;
+    .column(18);
+    .push(2);
+    
+    &.has-sidebar-left {
+        //.column(18);
+        .push(0);
+    }
+
+    &.has-sidebar-right {
+        //.column(18);
+        .push(0);
+    }
+
+    &.has-sidebar-left.has-sidebar-right {
+        .column(16);
+    }
+}
+
+
+
+/** ==============================================================
+ * Article and Sidebar blocks
+ *
+ */
+@borderDark: #666;
+@borderLight: #ccc;
+
+.article {
+    h1 {
+        border-bottom: 1px solid @borderDark;
+    }
+
+    h2 {
+        border-bottom: 1px solid @borderLight;
+    }
+ }
+
+ .sidebar {
+
+ }
+
+ .sidebar-right {
+     //padding-top: @magicNumber * 2;
+
+     .block {
+         margin-bottom: @magicNumber * 2;
+
+         h4 {
+             border-top: 1px solid @borderLight;
+             //border-bottom: 1px solid @borderLight;
+             background-color: #eee;
+             #gradient .horizontal(#fff, #ccc);
+         }
+     }
+ }
+
+
+
+
+/** ==============================================================
+ * The footer column area.
+ *
+ */
+@bgColorFooter: @bgColorHtml;
+@colorFooterWrapper: #ddd;
+@colorFooter: #aaa;
+@borderFooter: #777;
+@borderColor: #666;
+
+.outer-wrap-footer {
+    background-color: @bgColorFooter;
+    padding-top: @magicNumber;
+    padding-bottom: @magicNumber * 2;
+}
+
+.footer-column-wrapper {
+    color: @colorFooterWrapper;
+    border-bottom: 1px solid @borderColor;
+    padding-bottom: @magicNumber;
+    margin-bottom: @magicNumber * 2;
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+.footer-column-x {
+    padding-bottom: @magicNumber;
+    padding-right: 1em;
+}
+
+.footer-column-1,
+.footer-column-2 {
+    border-right: 1px solid @borderColor;
+}
+
+.footer-column-2,
+.footer-column-3 {
+    padding-left: 1em;
+}
+
+.site-footer {
+    color: @colorFooter;
+    text-align: center;
+    line-height: 0.5em;
+    padding-bottom: @magicNumber;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: inline-block;
+        
+        &::after {
+            content: " • ";
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+
+
+/** ==============================================================
+ * Custom 
+ */
+html.cimage {
+    .square150 {
+        width: 150px;
+        height: 150px;
+        border: 1px solid darkgreen;
+        margin-bottom: @magicNumber;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
