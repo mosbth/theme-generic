@@ -47,6 +47,10 @@ body {
     }
  }
 
+.inner-wrap-header {
+    position: relative;
+}
+
 .site-logo {
     .column(6);
     position: relative;
@@ -61,6 +65,10 @@ body {
     .column(2);
     padding-top: 0.5em;
     text-align: right;
+}
+
+.logo-1 {
+
 }
 
 
@@ -283,6 +291,18 @@ body {
 
 
 /** ==============================================================
+ * Media queries.
+ *
+ */
+//@total-width: @gridsystem-width;
+@total-width: 100%;
+//@maxWidth: none;
+@maxWidth: 960px;
+
+
+
+
+/** ==============================================================
  * Custom 
  */
 html.cimage {
@@ -296,4 +316,19 @@ html.cimage {
         justify-content: center;
     }
 
+    .logo-1 {
+        position: absolute;
+        top: 70px;
+        left: -150px;
+    }
+
+}
+
+html.dbwebb {
+
+    .logo-1 {
+        position: absolute;
+        top: 50px;
+        left: -130px;
+    }
 }
