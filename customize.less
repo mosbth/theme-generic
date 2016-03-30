@@ -23,7 +23,8 @@ body {
  *  Typography
  */
 @fontFamilyHeadings:  @fontFamilyCambria;
-@fontFamilyBody:      @fontFamilyHelveticaNeue;
+//@fontFamilyBody:      @fontFamilyHelveticaNeue;
+@fontFamilyBody:      @fontFamilyHelvetica;
 
 
 
@@ -132,42 +133,8 @@ body {
     padding-bottom: @magicNumber * 2;
 }
 
-.sidebar-left {
-    .column(6);
-    //.push(1);
-
-    &.has-sidebar-right {
-        .column(6);
-    }
-}
-
-.sidebar-right {
-    .column(5);
-    .push(1);
-
-    &.has-sidebar-left {
-        .column(6);
-    }
-}
-
 .main {
     min-height: @magicNumber * 20;
-    .column(18);
-    .push(2);
-    
-    &.has-sidebar-left {
-        //.column(18);
-        .push(0);
-    }
-
-    &.has-sidebar-right {
-        //.column(18);
-        .push(0);
-    }
-
-    &.has-sidebar-left.has-sidebar-right {
-        .column(16);
-    }
 }
 
 
