@@ -126,6 +126,26 @@ body {
 
 
 /** ==============================================================
+ * Flash
+ *
+ */
+.inner-wrap-flash {
+    margin-bottom: @magicNumber;
+}
+
+
+
+/** ==============================================================
+ * Column above
+ *
+ */
+.inner-wrap-columns-above {
+    margin-bottom: @magicNumber;
+}
+
+
+
+/** ==============================================================
  * Main
  *
  */
@@ -158,7 +178,8 @@ body {
     margin-bottom: @magicNumber * 3;
  }
 
- .sidebar {
+ .sidebar,
+ .columns-above {
      .block {
          margin-bottom: @magicNumber * 2;
 
@@ -167,6 +188,7 @@ body {
              //border-bottom: 1px solid @borderLight;
              background-color: #eee;
              #gradient .horizontal(#fff, #ccc);
+             .anchorAnonymous();
          }
      }
  }
