@@ -34,6 +34,12 @@ update:
 
 
 
+# target: test - Execute all tests.
+.PHONY: test
+test: lint
+
+
+
 # target: build - Create and empty the build directory.
 .PHONY: build
 build: 

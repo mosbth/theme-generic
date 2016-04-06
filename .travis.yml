@@ -70,8 +70,8 @@ script:
     - csslint --version
     
     # Run validation & publish
-    - composer validate
-    - make lint
+    #- composer validate
+    - make test
     #- make phpcs
 
 
