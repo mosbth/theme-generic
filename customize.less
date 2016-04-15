@@ -163,16 +163,21 @@ body {
  * Article and Sidebar blocks
  *
  */
-@borderDark: #666;
-@borderLight: #ccc;
+@header1BorderColor: #666;
+@headerBorderColor: #ccc;
+
+@blockBorderColor: #ccc;
+@blockBgColor: #eee;
+@blockGradientColorStart: #fff;
+@blockGradientColorEnd: #ccc;
 
 .article {
     h1 {
-        border-bottom: 1px solid @borderDark;
+        border-bottom: 1px solid @header1BorderColor;
     }
 
     h2 {
-        border-bottom: 1px solid @borderLight;
+        border-bottom: 1px solid @headerBorderColor;
     }
     
     margin-bottom: @magicNumber * 3;
@@ -184,10 +189,10 @@ body {
          margin-bottom: @magicNumber * 2;
 
          h4 {
-             border-top: 1px solid @borderLight;
+             border-top: 1px solid @blockBorderColor;
              //border-bottom: 1px solid @borderLight;
-             background-color: #eee;
-             #gradient .horizontal(#fff, #ccc);
+             background-color: @blockBgColor;
+             #gradient .horizontal(@blockGradientColorStart, @blockGradientColorEnd);
              .anchorAnonymous();
          }
      }
@@ -251,7 +256,7 @@ body {
 .site-footer {
     color: @colorFooter;
     text-align: center;
-    line-height: 0.5em;
+    //line-height: 0.5em;
     padding-bottom: @magicNumber;
 
     ul {
@@ -287,7 +292,6 @@ body {
 @total-width: 100%;
 //@maxWidth: none;
 @maxWidth: 960px;
-
 
 
 

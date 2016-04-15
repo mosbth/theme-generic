@@ -1,0 +1,85 @@
+/** 
+* Grillcon theme.
+*/
+@import url(style.less);
+
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+//@fontFamilyHeadings:  @fontFamilyCambria;
+@fontFamilyHeadings:  @fontFamilyMonospace;
+//@fontFamilyBody:      @fontFamilyHelveticaNeue;
+//@fontFamilyBody:      @fontFamilyHelvetica;
+@fontFamilyBody:      @fontFamilyMonospace;
+
+body {
+    .body-font(130%);
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Anchors
+ */
+@anchorColor:         #ff0000;
+@anchorColor2:        #ff0000;
+@anchorColorHover:    #ff4600;
+@anchorColorActive:   #ff4600;
+@anchorColorVisited:  #ff3f00;
+
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.logo-1 {
+    position: absolute;
+    top: 58px;
+    left: -280px;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Navbar
+ */
+.rm-navbar {
+    font-family: @fontFamilyMonospace;
+}
+
+
+/** --------------------------------------------------------------
+ * Figure
+ */
+.figure {
+    display: block;
+
+    figcaption {
+        display: block;
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ * Article and Sidebar blocks
+ *
+ */
+ @header1BorderColor: #ff8000;
+ @headerBorderColor: #ff8000;
+
+ @blockBorderColor: #ffaf00;
+ @blockBgColor: #ffff00;
+ @blockGradientColorStart: #fff;
+ @blockGradientColorEnd: #ffff00;
+
+.sidebar,
+.columns-above {
+    .block {
+        h4 {
+            padding: 0.5em 0 0.5em 0.5em;
+        }
+    }
+}
