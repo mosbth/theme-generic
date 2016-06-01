@@ -40,15 +40,35 @@ body {
     left: -280px;
 }
 
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+    }
+}
+
 
 
 /** --------------------------------------------------------------
  *  Navbar
  */
+// Mobile button
+@navbarMobileBorderColor:               @anchorColor;
+@navbarMobileItemBorderColor:           @anchorColor;
+@navbarMobileItemHoverBorderColor:      @anchorColor;
+
+// The menu button hover
+@navbarMenuButtonHoverColor:         @anchorColor;
+
+// The menu clicked
+@navbarMenuButtonClickedBorderColor:    @anchorColor;
+
 .rm-navbar {
     font-family: @fontFamilyMonospace;
 }
 
+.rm-mobile {
+    background-color: @bgColorHeader;
+}
 
 /** --------------------------------------------------------------
  * Figure

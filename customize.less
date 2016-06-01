@@ -53,13 +53,15 @@ body {
 }
 
 .site-logo {
-    .column(6);
-    position: relative;
+    //.column(6);
+    //position: relative;
 }
 
 .navbar2 {
-    .column(16);
-    font-family: @fontFamilyHelvetica;
+    //display: flex;
+    //justify-content: flex-end;
+    //.column(16);
+    //font-family: @fontFamilyHelvetica;
 }
 
 .search {
@@ -81,12 +83,12 @@ body {
 .site-logo-text {
     display: inline-block;
     float: left;
-    position: relative;
-    top: 2px;
-    left: 4px;
+    //position: relative;
+    //top: 2px;
+    //left: 4px;
     letter-spacing: 4px;
     font-size: 28px;
-    font-family: @fontFamilyMonospace;
+    //font-family: @fontFamilyMonospace;
     text-shadow: 2px -2px 2px @bgColorHeaderBorder;
 
     a {
@@ -108,17 +110,18 @@ body {
 @navbarItemColor:           #333;
 @navbarItemHoverColor:      #fff;
 @navbarItemHoverBgColor:    #666;
+//@navbarItemSelectedBorderColor: #888;
 
 .rm-navbar {
 }
 
 .rm-default {
-    position: relative;
-    top: -2px;
-    text-align: right;
+    //position: relative;
+    //top: -4px;
+    //text-align: right;
 
     a {
-        padding-top: 12px;
+        //padding-top: 12px;
         padding-bottom: 12px;
     }
 }
@@ -136,7 +139,7 @@ body {
 
 
 /** ==============================================================
- * Column above
+ * Column above and below
  *
  */
 .inner-wrap-columns-above {
@@ -183,8 +186,10 @@ body {
     margin-bottom: @magicNumber * 3;
  }
 
+.article,
  .sidebar,
- .columns-above {
+ .columns-above,
+ .columns-below {
      .block {
          margin-bottom: @magicNumber * 2;
 
@@ -279,49 +284,5 @@ body {
 
     a {
         color: inherit;
-    }
-}
-
-
-
-/** ==============================================================
- * Media queries.
- *
- */
-//@total-width: @gridsystem-width;
-@total-width: 100%;
-//@maxWidth: none;
-@maxWidth: 960px;
-
-
-
-/** ==============================================================
- * Custom 
- */
-html.cimage {
-    .square150 {
-        width: 150px;
-        height: 150px;
-        border: 1px solid darkgreen;
-        margin-bottom: @magicNumber;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo-1 {
-        position: absolute;
-        top: 70px;
-        left: -150px;
-    }
-
-}
-
-html.dbwebb {
-
-    .logo-1 {
-        position: absolute;
-        top: 50px;
-        left: -130px;
     }
 }
