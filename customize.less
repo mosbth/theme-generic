@@ -48,38 +48,49 @@ body {
     }
  }
 
-.inner-wrap-header {
+.inner-wrap-header,
+.logo-1 {
     position: relative;
 }
 
-.site-logo {
-    //.column(6);
-    //position: relative;
+
+// Layout of the header columns
+.site-logo-text {
+    .column(8);
 }
 
 .navbar2 {
-    //display: flex;
-    //justify-content: flex-end;
-    //.column(16);
-    //font-family: @fontFamilyHelvetica;
+    .column(16);
 }
 
 .search {
-    .column(2);
-    padding-top: 0.5em;
-    text-align: right;
-}
-
-.logo-1 {
-
+    //.column(2);
 }
 
 
 
-/** ==============================================================
- * Logo
+/** --------------------------------------------------------------
+ * Logo and logo text
  *
  */
+.site-logo-text {
+    letter-spacing: 4px;
+    font-size: 28px;
+    //font-family: @fontFamilyMonospace;
+    text-shadow: 2px -2px 2px @bgColorHeaderBorder;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-shadow: 2px -2px 2px lighten(@bgColorHeaderBorder, 20%);
+        }
+    }
+}
+
+
+
+/*
 .site-logo-text {
     display: inline-block;
     float: left;
@@ -99,7 +110,7 @@ body {
         }
     }
 }
-
+*/
 
 
 /** ==============================================================
@@ -111,6 +122,17 @@ body {
 @navbarItemHoverColor:      #fff;
 @navbarItemHoverBgColor:    #666;
 //@navbarItemSelectedBorderColor: #888;
+
+// Mobile button
+@navbarMobileBorderColor:               #ccc;
+@navbarMobileItemBorderColor:           #ccc;
+@navbarMobileItemHoverBorderColor:      #ccc;
+
+// The menu button hover
+@navbarMenuButtonHoverColor:         #ccc;
+
+// The menu clicked
+@navbarMenuButtonClickedBorderColor:    #ccc;
 
 .rm-navbar {
 }
@@ -124,6 +146,10 @@ body {
         //padding-top: 12px;
         padding-bottom: 12px;
     }
+}
+
+.rm-mobile {
+    background-color: @bgColorHeader;
 }
 
 
