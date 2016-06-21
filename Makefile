@@ -13,7 +13,7 @@ NPM_PACKAGES = 							\
 
 
 LESS_SOURCE = style.less
-LESS_INCLUDE_PATH = mos-theme/style
+LESS_INCLUDE_PATH = base-theme/style
 
 
 
