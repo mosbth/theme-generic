@@ -8,8 +8,8 @@
 /** --------------------------------------------------------------
  *  Typography
  */
-@fontFamilyHeadings:  @fontFamilyCambria;
-@fontFamilyBody:      @fontFamilyHelvetica;
+//@fontFamilyHeadings:  @fontFamilyWideSerif;
+//@fontFamilyBody:      @fontFamilyHelvetica;
 
 
 
@@ -29,14 +29,21 @@
 /** --------------------------------------------------------------
  *  Header
  */
-.logo-1 {
-    position: absolute;
-    top: 55px;
-    left: -135px;
+@colorSiteLogoShadow:       #999;
+@colorSiteLogoShadowHover:  #bbb;
+
+.site-logo-text {
+    //font-size: 42px;
 }
 
 .site-logo-text-icon {
     img {
         vertical-align: bottom;
     }
+}
+
+.logo-1 {
+    position: absolute;
+    top: 55px;
+    left: 0;
 }
