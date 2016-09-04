@@ -1,0 +1,145 @@
+/** 
+* Probe solutions theme.
+*/
+@import url(style.less);
+
+
+@bgColorHtml: #487FA6;
+@colorFooter: #fff;
+
+@colorAccentHeader1:  #487FA6;
+@colorAccentHeader2:  lighten(#487FA6, 30%);
+@colorAccentHeader3:  lighten(#487FA6, 10%);
+
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+//@fontFamilyHeadings:  @fontFamilyWideSerif;
+//@fontFamilyBody:      @fontFamilyHelvetica;
+
+
+
+/** --------------------------------------------------------------
+ *  Anchors
+ */
+/*
+@anchorColor:         #ff0000;
+@anchorColor2:        #ff0000;
+@anchorColorHover:    #ff4600;
+@anchorColorActive:   #ff4600;
+@anchorColorVisited:  #ff3f00;
+*/
+
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.logo-1 {
+    top: 55px;
+    left: 0;
+}
+
+.outer-wrap-main {
+    min-height: 30em;
+}
+
+// Images to switch language
+.lang-en-img,
+.lang-sv-img {
+    position: absolute;
+    top: 18px;
+    right: 72px;
+    z-index: 2;
+}
+
+.lang-en .lang-en-img,
+.lang-sv .lang-sv-img {
+    display: none;
+}
+
+// Layout of the header columns
+.site-logo-text {
+    .column(8);
+}
+
+.rm-navbar1 {
+    .column(10);
+}
+
+.rm-navbar2 {
+    .column(6);
+}
+
+.inner-wrap-header {
+    //.clearfix();
+    .showGrid(1600);
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Navbar
+ */
+// Navbar
+@navbarItemColor:        darken(#487FA6, 30%); 
+@navbarItemHoverColor:   #487FA6;
+@navbarItemHoverBgColor: lighten(#487FA6, 50%);
+
+// Dropdown
+@submenuBgColor:         lighten(#487FA6, 40%);
+@submenuItemBorderColor: #487FA6;
+
+.rm-desktop {
+    li {
+        min-width: 10em;
+        text-align: center;
+        
+        ul li {
+            text-align: left;
+
+            a:hover {
+                background-color: @submenuBgColor;
+            }
+        }
+    }
+}
+
+// Max
+@maxBgColor:                darken(#487FA6, 20%);
+@maxMenuItemClickedBgColor: darken(#487FA6, 30%);
+@maxButtonFontSize:         2em;
+@maxButtonColor:            @maxMenuItemClickedBgColor;
+@maxButtonClickedColor:     lighten(#487FA6, 40%);
+@maxButtonSubmenuBgColor:    darken(#487FA6, 25%);
+@maxButtonSubmenuHoverBgColor: darken(#487FA6, 15%);
+
+
+
+/** --------------------------------------------------------------
+ *  Main and sidebars
+ */
+.main {
+    .column(16);
+    .push(4);
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #296D90;
+        border-color: #296D90;
+    }
+
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.site-footer {
+    //text-align: left;
+}
