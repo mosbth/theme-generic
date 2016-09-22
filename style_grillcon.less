@@ -4,6 +4,11 @@
 @import url(style.less);
 
 
+@colorAccentHeader1:  #ff0000;
+@colorAccentHeader2:  #ff4600;
+@colorAccentHeader3:  #ff3f00;
+
+
 
 /** --------------------------------------------------------------
  *  Typography
@@ -37,7 +42,11 @@ body {
 .logo-1 {
     position: absolute;
     top: 58px;
-    left: -280px;
+    left: 10px;
+}
+
+.site-logo-text {
+    font-family: @fontFamilyMonospace;
 }
 
 .site-logo-text-icon {
@@ -51,6 +60,7 @@ body {
 /** --------------------------------------------------------------
  *  Navbar
  */
+/*
 // Mobile button
 @navbarMobileBorderColor:               @anchorColor;
 @navbarMobileItemBorderColor:           @anchorColor;
@@ -61,10 +71,62 @@ body {
 
 // The menu clicked
 @navbarMenuButtonClickedBorderColor:    @anchorColor;
+*/
+
+
+/** --------------------------------------------------------------
+ *  Navbar
+ */
+// Navbar
+//@navbarItemColor:        darken(#487FA6, 30%); 
+//@navbarItemHoverColor:   #487FA6;
+//@navbarItemHoverBgColor: lighten(#487FA6, 50%);
+
+// Dropdown
+//@submenuBgColor:         lighten(#487FA6, 40%);
+//@submenuItemBorderColor: #487FA6;
 
 .rm-navbar {
     font-family: @fontFamilyMonospace;
 }
+
+.rm-desktop {
+    text-align: center;
+
+    li {
+        min-width: 6em;
+        font-size: 20px;
+        text-align: center;
+
+        li:first-child a {
+            padding-left: 0;
+        }
+
+        li:last-child a {
+            padding-right: 0;
+        }
+
+        &.selected a,
+        a:hover {
+            color: @colorAccentHeader1;
+            text-shadow: 0px 0px 1px @colorAccentHeader2;
+            text-decoration: underline;
+        }
+    }
+}
+
+.rm-max {
+    text-align: left;
+}
+
+// Max
+//@maxBgColor:                darken(#487FA6, 20%);
+//@maxMenuItemClickedBgColor: darken(#487FA6, 30%);
+@maxButtonFontSize:         2em;
+//@maxButtonColor:            @maxMenuItemClickedBgColor;
+@maxButtonClickedColor:     @colorAccentHeader1;
+//@maxButtonSubmenuBgColor:    darken(#487FA6, 25%);
+//@maxButtonSubmenuHoverBgColor: darken(#487FA6, 15%);
 
 
 
@@ -99,5 +161,75 @@ body {
         h4 {
             padding: 0.5em 0 0.5em 0.5em;
         }
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ * Media queries
+ *
+ */
+@media screen and (max-width: 1650px) {
+    .logo-1 {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .logo-1 {
+        width: 100px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .site-logo-text {
+        .column(6);
+    }
+
+    .navbar2 {
+        .column(16);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .site-logo-text {
+        .column(8);
+    }
+
+    .navbar2 {
+        .column(12);
+    }
+
+    .rm-desktop {
+        li {
+            min-width: auto;
+
+            a {
+                padding: 0.5em;
+            }
+
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            &:last-child a {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/*
+@media screen and (max-width: 960px) {
+    .site-logo-text {
+        .column(8);
+    }
+}
+*/
+@media screen and (max-width: 680px) {
+    .site-logo-text {
+        .column(20);
     }
 }

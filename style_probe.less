@@ -37,13 +37,13 @@
 /** --------------------------------------------------------------
  *  Header
  */
-.logo-1 {
-    top: 55px;
-    left: 0;
+.outer-wrap-header {
+    margin-bottom: @magicNumber * 2;
 }
 
-.outer-wrap-main {
-    min-height: 30em;
+.logo-1 {
+    top: 75px;
+    left: 10px;
 }
 
 // Images to switch language
@@ -63,10 +63,16 @@
 // Layout of the header columns
 .site-logo-text {
     .column(8);
+    margin-top: 12px;
+}
+
+.site-logo-text-icon img {
+    vertical-align: middle;
 }
 
 .rm-navbar1 {
     .column(10);
+    margin-top: 12px;
 }
 
 .rm-navbar2 {
@@ -75,10 +81,8 @@
 
 .inner-wrap-header {
     //.clearfix();
-    .showGrid(1600);
+    //.showGrid(1600);
 }
-
-
 
 /** --------------------------------------------------------------
  *  Navbar
@@ -121,6 +125,14 @@
 /** --------------------------------------------------------------
  *  Main and sidebars
  */
+.outer-wrap-main {
+    min-height: 30em;
+}
+
+.inner-wrap-main {
+    padding-bottom: @magicNumber;
+}
+
 .main {
     .column(16);
     .push(4);
@@ -142,4 +154,87 @@
  */
 .site-footer {
     //text-align: left;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Media queries
+ */
+@media screen and (max-width: 1360px) {
+    .site-logo-text {
+        .column(10);
+    }
+
+    .rm-navbar1 {
+        .column(10);
+    }
+
+    .rm-navbar2 {
+        .column(4);
+    }
+
+    .rm-desktop li {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .site-logo-text {
+        //.column(12);
+    }
+
+    .rm-navbar1 {
+        //.column(8);
+        text-align: right;
+    }
+
+    .main {
+        .column(18);
+        .push(3);
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .site-logo-text {
+        .column(11);
+    }
+
+    .rm-navbar1 {
+        .column(9);
+    }
+
+    .rm-desktop {
+        a {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        li::first-child a {
+            padding-left: 0;
+        }
+
+        li::last-child a {
+            padding-right: 0;
+        }
+    }
+
+    .main {
+        .column(20);
+        .push(2);
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .site-logo-text {
+        .column(20);
+    }
+
+    .rm-navbar1 {
+        display: none;
+    }
+
+    .main {
+        .column(24);
+    }
 }
