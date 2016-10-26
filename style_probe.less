@@ -9,7 +9,7 @@
 
 @colorAccentHeader1:  #487FA6;
 @colorAccentHeader2:  lighten(#487FA6, 30%);
-@colorAccentHeader3:  lighten(#487FA6, 10%);
+@colorAccentHeader3:  lighten(#487FA6, 20%);
 
 
 
@@ -33,25 +33,47 @@
 */
 
 
+// Responsive images
+img {
+    height: auto;
+}
+
+.inner-wrap {
+    max-width: 1024px;
+}
+
+.featured-wrap {
+    .column(24);
+}
+
+
 
 /** --------------------------------------------------------------
  *  Header
  */
 .outer-wrap-header {
-    margin-bottom: @magicNumber * 2;
+    height: auto;
+    margin-bottom: 4px; //@magicNumber;
+}
+
+.inner-wrap-header {
+    border-bottom: 1px dotted #444;
 }
 
 .logo-1 {
+    display: none;
+/*
     top: 75px;
     left: 10px;
+*/
 }
 
 // Images to switch language
 .lang-en-img,
 .lang-sv-img {
     position: absolute;
-    top: 18px;
-    right: 72px;
+    top: 30px;
+    right: 0px;
     z-index: 2;
 }
 
@@ -62,11 +84,12 @@
 
 // Layout of the header columns
 .site-logo-text {
-    .column(8);
+    .column(12);
     margin-top: 12px;
 }
 
 .site-logo-text-icon img {
+    display: inline;
     vertical-align: middle;
 }
 
@@ -76,13 +99,19 @@
 }
 
 .rm-navbar2 {
-    .column(6);
+    .column(2);
 }
 
 .inner-wrap-header {
     //.clearfix();
     //.showGrid(1600);
 }
+
+.site-logo-text {
+    padding-left: 0;
+}
+
+
 
 /** --------------------------------------------------------------
  *  Navbar
@@ -98,11 +127,11 @@
 
 .rm-desktop {
     li {
-        min-width: 10em;
-        text-align: center;
+        //min-width: 10em;
+        //text-align: center;
         
         ul li {
-            text-align: left;
+            //text-align: left;
 
             a:hover {
                 background-color: @submenuBgColor;
@@ -120,6 +149,77 @@
 @maxButtonSubmenuBgColor:    darken(#487FA6, 25%);
 @maxButtonSubmenuHoverBgColor: darken(#487FA6, 15%);
 
+.rm-navbar2 {
+    display: none;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Design elements
+ */
+.quote {
+    clear: both;
+    text-align: center;
+    font-size: 2em;
+    background-color: @colorAccentHeader3;
+    color: #fff;
+    padding: 1.5em;
+    margin-top: 22px;
+    font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    .quote {
+        font-size: 1.5em;
+    }
+}
+
+
+
+.home-block1,
+.page-header {
+    //margin-bottom: 22px;
+
+    img {
+        min-width: 100%;
+    }
+}
+
+.home-block2,
+.home-block3 {
+    margin-bottom: 22px;
+    background-color: #eee;
+    width: 48%;
+}
+
+.home-block2 {
+    float: left;
+    margin-right: 4%;
+}
+
+.home-block3 {
+    float: right;
+}
+
+a:hover {
+    .site-logo-text-icon,
+    .home-block1,
+    .home-block2,
+    .home-block3 {
+        opacity: 0.7;
+        transition: opacity 1s;
+    }
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    border: none;
+}
+
 
 
 /** --------------------------------------------------------------
@@ -134,24 +234,62 @@
 }
 
 .main {
-    .column(16);
-    .push(4);
+    //.column(16);
+    //.push(4);
 
     h1,
     h2,
     h3,
     h4 {
-        color: #296D90;
-        border-color: #296D90;
+        color: #888; //#296D90;
+        font-family: 'Raleway', sans-serif;
+        //border-color: #296D90;
+        border-bottom: none;
     }
 
+    h2 {
+        text-transform: uppercase;
+    }
 }
+
+body.kontakt {
+    h1 {
+        margin-top: @magicNumber * 2;
+        margin-bottom: @magicNumber * 2;
+    }
+}
+
+body.page-template-default .main {
+    .column(12);
+    
+    h1 {
+        margin-top: @magicNumber;
+    }
+}
+
+body.page-template-default .sidebar-right {
+    .column(12);
+}
+
+body.home .main {
+    .column(24);
+}
+
+body.home .sidebar-right {
+    .column(0);
+}
+
 
 
 
 /** --------------------------------------------------------------
  *  Footer
  */
+.outer-wrap-footer {
+    background-image: url("/images/v2/bottom.jpg");
+    padding-bottom: 0;
+}
+
 .site-footer {
     //text-align: left;
 }
@@ -161,80 +299,75 @@
 /** --------------------------------------------------------------
  *  Media queries
  */
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 880px) {
     .site-logo-text {
-        .column(10);
+        .column(8);
     }
 
     .rm-navbar1 {
-        .column(10);
+        .column(14);
+        text-align: center;
     }
 
-    .rm-navbar2 {
-        .column(4);
+    body.page-template-default .main {
+        .column(16);
     }
 
-    .rm-desktop li {
-        min-width: auto;
+    body.page-template-default .sidebar-right {
+        .column(8);
     }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 760px) {
     .site-logo-text {
-        //.column(12);
-    }
-
-    .rm-navbar1 {
         //.column(8);
-        text-align: right;
-    }
-
-    .main {
-        .column(18);
-        .push(3);
-    }
-}
-
-@media screen and (max-width: 980px) {
-    .site-logo-text {
-        .column(11);
     }
 
     .rm-navbar1 {
-        .column(9);
-    }
-
-    .rm-desktop {
-        a {
+        //.column(14);
+        text-align: center;
+        
+        li a {
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
-
-        li::first-child a {
-            padding-left: 0;
-        }
-
-        li::last-child a {
-            padding-right: 0;
-        }
-    }
-
-    .main {
-        .column(20);
-        .push(2);
     }
 }
 
-@media screen and (max-width: 880px) {
-    .site-logo-text {
-        .column(20);
+@media screen and (max-width: 680px) {
+    .rm-desktop {
+        display: block;
+        font-size: 0.9em;
     }
 
+    body.page-template-default .main {
+        .column(24);
+    }
+
+    body.page-template-default .sidebar-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
     .rm-navbar1 {
         display: none;
     }
 
-    .main {
-        .column(24);
+    .rm-navbar2 {
+        display: block;
+    }
+
+    .rm-max.rm-navbar {
+        right: 4px;
+    }
+
+    .lang-en-img, .lang-sv-img {
+        top: 23px;
+        right: 44px;
+    }
+
+    .site-logo-text {
+        .column(14);
     }
 }
