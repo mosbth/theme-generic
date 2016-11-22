@@ -27,16 +27,50 @@
 
 
 /** --------------------------------------------------------------
- *  Header
+ *  Vertical Grid
  */
-.logo-1 {
-    top: 55px;
-    left: 0;
+//@gridType: "flex";
+
+.inner-wrap {
+    @gridImage: "../img/theme/vertical-grid/grid950x24x30x10-nomargin.png";
+
+    #vgrid .grid(1100px);
+    //#vgrid .showGrid(1100px, @gridImage);
+
+    &.inner-wrap-header {
+        #vgrid .grid(100%);
+        //#vgrid .showGrid(100%, @gridImage);
+    }
+}
+
+.row {
+    #vgrid .row();
 }
 
 
 
-/** ==============================================================
+/** --------------------------------------------------------------
+ *  Horisontal Grid (Typographic grid, Baseline grid)
+ */
+body {
+    #hgrid .font();
+}
+
+.typographyHeadings();
+.typographyTextElements();
+.typographyCodeElements();
+.typographyListElements();
+.typographyTableElements();
+.typographyOtherElements();
+
+.inner-wrap-main {
+    //@gridImage: "../img/theme/typographic-grid/magic-number-24.png";
+    //#hgrid .showGrid(@gridImage);
+}
+
+
+
+/** --------------------------------------------------------------
  * Route specific style.
  */
 .route- {
@@ -55,6 +89,70 @@
 .route-community {
     .outer-wrap-main {
         display: none;
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+@colorAccentHeader1:  #3B440D;
+@colorAccentHeader2:  #9FB129;
+
+.logo-1 {
+    top: 55px;
+    left: 0;
+}
+
+
+
+.profile {
+     text-align: right;
+
+     .profile-phpbb {
+         font-size: 2em;
+         line-height: 0;
+         position: absolute;
+         top: 21px;
+         right: 60px;
+     }
+
+    .ucp,
+    .login {
+        a {
+            color: @colorAccentHeader1;
+
+            &:hover {
+                color: @colorAccentHeader2;
+            }
+        }
+
+        .icon {
+            position: relative;
+            top: -12px;
+        }
+    }
+
+    .gravatar {
+        img {
+            border-radius: 50%;
+            vertical-align: -8px;
+        }
+
+        a:hover img {
+            opacity: 0.7;
+        }
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .login {
+        .text {
+            display: none;
+        }
     }
 }
 

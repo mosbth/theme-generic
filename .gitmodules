@@ -1,3 +1,15 @@
 [submodule "mos-theme"]
 	path = mos-theme
 	url = https://github.com/mosbth/theme.git
+[submodule "vertical-grid"]
+	path = modules/vertical-grid
+	url = git@github.com:canax/vertical-grid.git
+[submodule "typographic-grid"]
+	path = modules/typographic-grid
+	url = git@github.com:canax/typographic-grid.git
+[submodule "responsive-menu"]
+	path = modules/responsive-menu
+	url = git@github.com:mosbth/responsive-menu.git
+[submodule "figure"]
+	path = modules/figure
+	url = git@github.com:canax/figure.git

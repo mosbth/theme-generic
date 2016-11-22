@@ -1,5 +1,5 @@
 /**
-* Mos base theme.
+* Mos base theme, factory for all modules to start with as the base.
 */
 
 // Reset, or normalize the browser style
@@ -62,8 +62,8 @@
 // Gallery
 @import url(gallery.less);
 
-// Wordpress specifics.
-@import url(wordpress.less);
+// Wordpress specifics. IMPORT THIS IN TARGET INSTEAD
+//@import url(wordpress.less);
 
 // Content specific
 @import url(blog.less);
@@ -78,5 +78,5 @@
 // Make it printable 
 @import url(print.less);
 
-// Make it responsive
-@import url(media-queries.less);
+// Make it responsive REFACTOR THIS WITHIN EACH PLACE AND CUSTOM IN SPECIFIC
+//@import url(media-queries.less);

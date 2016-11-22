@@ -1,25 +1,17 @@
 /** 
 * Grillcon theme.
 */
-@import url(style.less);
-
-
-
-/** --------------------------------------------------------------
- *  Typography
- */
-//@fontFamilyHeadings:  @fontFamilyCambria;
-//@fontFamilyBody:      @fontFamilyHelvetica;
+@import url(modules.less);
 
 
 
 /** --------------------------------------------------------------
  *  Anchors
  */
+@anchorColor:         #863220;
+@anchorColorHover:    #BE4A37;
 /*
-@anchorColor:         #ff0000;
 @anchorColor2:        #ff0000;
-@anchorColorHover:    #ff4600;
 @anchorColorActive:   #ff4600;
 @anchorColorVisited:  #ff3f00;
 */
@@ -27,13 +19,304 @@
 
 
 /** --------------------------------------------------------------
+ *  Vertical Grid
+ */
+//@gridType: "flex";
+
+.inner-wrap {
+    @gridImage: "../img/theme/vertical-grid/grid950x24x30x10-nomargin.png";
+
+    #vgrid .grid(1100px);
+    //#vgrid .showGrid(1100px, @gridImage);
+
+    &.inner-wrap-header {
+        #vgrid .grid(100%);
+        //#vgrid .showGrid(100%, @gridImage);
+    }
+}
+
+.row {
+    #vgrid .row();
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Horisontal Grid (Typographic grid, Baseline grid)
+ */
+body {
+    #hgrid .font();
+}
+
+.typographyHeadings();
+.typographyTextElements();
+.typographyCodeElements();
+.typographyListElements();
+.typographyTableElements();
+.typographyOtherElements();
+
+.inner-wrap-main {
+    //@gridImage: "../img/theme/typographic-grid/magic-number-24.png";
+    //#hgrid .showGrid(@gridImage);
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Route specific style
+ */
+.route- {
+    .inner-wrap-flash {
+        margin-bottom: 8px;
+    }
+}
+
+
+
+/** --------------------------------------------------------------
  *  Header
  */
+@colorAccentHeader1:  #251307;
+@colorAccentHeader2:  #9E3D2A;
+
+// The larger logo position
 .logo-1 {
     top: 70px;
     left: 10px;
  }
 
+// The logo in small and large version
+@media screen and (max-width: 1395px) {
+    .site-logo-text-icon img {
+        display: inline;
+    }
+
+    .logo-1 {
+        display: none;
+    }
+}
+
+// Layout of the header columns
+ .site-logo-text {
+     #vgrid .column(7);
+ }
+
+ .navbar2 {
+     #vgrid .column(10);
+     text-align: center;
+ }
+
+ .profile {
+     #vgrid .column(7);
+ }
+
+// responsive menu flow within header
+@media screen and (max-width: 1100px) {
+    .site-logo-text {
+        //#vgrid .column(6);
+    }
+
+    .navbar2 {
+        #vgrid .column(14);
+    }
+
+    .profile {
+        #vgrid .column(3);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .site-logo-text {
+        #vgrid .column(10);
+    }
+
+    .navbar2 {
+        #vgrid .column(12);
+    }
+
+    .profile {
+        #vgrid .column(2);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .site-logo-text {
+        #vgrid .column(22);
+    }
+
+    .navbar2 {
+        display: none;
+    }
+
+    .profile {
+        #vgrid .column(2);
+    }
+}
+
+
+
+ /** --------------------------------------------------------------
+  * Navbar
+  *
+  */
+@maxButtonFontSize:         2em;
+@navbarMenuButtonClickedColor: pink;
+
+.rm-desktop {
+    font-size: 1.5em;
+
+    @media screen and (max-width: 700px) {
+        font-size: 1.2em;
+    }
+
+    a {
+        color: #333;
+        padding: 8px 30px 0 30px;
+        transition: all 0.6s linear;
+
+        @media screen and (max-width: 900px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @media screen and (max-width: 800px) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    li:first-child a {
+        padding-left: 0;
+    }
+
+    li:last-child a {
+        padding-right: 0;
+    }
+
+    li.selected a,
+    a:hover {
+        color: @colorAccentHeader1;
+        text-shadow: 0px 0px 1px @colorAccentHeader2;
+        text-decoration: underline;
+    }
+
+    li.selected a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+/*
+ .rm-max {
+     &.rm-navbar {
+         top: 6px;
+     }
+ }
+*/
+/*
+ // Older to clean up?
+ .rm-navbar-top {
+     text-align: center;
+
+     &.rm-navbar {
+         font-family: @fontFamilyNavbar;
+         line-height: 1;
+         font-size: 22px;
+         top: 10px;
+     }
+
+     .rm-desktop {
+
+         a {
+             color: #333;
+             padding: 0 30px;
+             text-decoration: none;
+             transition: all 0.6s linear;
+         }
+
+         li:first-child a {
+             padding-left: 0;
+         }
+
+         li:last-child a {
+             padding-right: 0;
+         }
+
+         li.selected a,
+         a:hover {
+             color: @colorAccentHeader1;
+             text-shadow: 0px 0px 1px @colorAccentHeader2;
+             text-decoration: underline;
+         }
+
+         li.selected a {
+             text-decoration: none;
+
+             &:hover {
+                 text-decoration: underline;
+             }
+         }
+     }
+
+     @media screen and (max-width: 1400px) {
+         .rm-desktop {
+             a {
+                 padding: 0 20px;
+             }
+         }
+     }
+
+     @media screen and (max-width: 1000px) {
+         .rm-desktop {
+             a {
+                 padding: 0 10px;
+             }
+         }
+     }
+
+     @media screen and (max-width: 1000px) {
+         .rm-desktop {
+             .icon {
+                 display: none;
+             }
+         }
+     }
+ }
+
+
+
+ .rm-navbar-max {
+     //font-size: 1em;
+
+     &.rm-navbar {
+         display: inline-block;
+     }
+
+     .rm-button {
+         position: relative;
+         top: 3px;
+         font-size: 1.5em;
+         //line-height: 0;
+     }
+
+     .rm-mobile {
+         background-color: #444;
+         text-align: left;
+
+         a {
+             color: #fff;
+
+             &:hover {
+                 background-color: #555;
+             }
+         }
+     }
+ }
 
 
 

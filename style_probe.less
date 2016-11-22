@@ -4,7 +4,7 @@
 @import url(style.less);
 
 
-@bgColorHtml: #487FA6;
+@bgColorHtml: #578BBD; //#487FA6;
 @colorFooter: #fff;
 
 @colorAccentHeader1:  #487FA6;
@@ -125,6 +125,10 @@ img {
 @submenuBgColor:         lighten(#487FA6, 40%);
 @submenuItemBorderColor: #487FA6;
 
+.rm-navbar {
+    font-family: 'Raleway', sans-serif;
+}
+
 .rm-desktop {
     li {
         //min-width: 10em;
@@ -137,6 +141,16 @@ img {
                 background-color: @submenuBgColor;
             }
         }
+    }
+
+    > li a {
+        text-transform: uppercase;
+        color: #666;
+    }
+
+    > li li a {
+        text-transform: none;
+        color: @navbarItemColor;
     }
 }
 
@@ -153,6 +167,15 @@ img {
     display: none;
 }
 
+.rm-mobile {
+    > li a {
+        text-transform: uppercase;
+    }
+
+    > li li a {
+        text-transform: none;
+    }
+}
 
 
 /** --------------------------------------------------------------
@@ -162,11 +185,12 @@ img {
     clear: both;
     text-align: center;
     font-size: 2em;
-    background-color: @colorAccentHeader3;
     color: #fff;
     padding: 1.5em;
     margin-top: 22px;
     font-family: 'Raleway', sans-serif;
+    background-color: @colorAccentHeader3;
+    background: linear-gradient(to bottom, @colorAccentHeader1, @colorAccentHeader3 10%, @colorAccentHeader3 90%, @colorAccentHeader1);
 }
 
 @media screen and (max-width: 600px) {
@@ -252,14 +276,16 @@ h2 {
     }
 }
 
-body.kontakt {
+body.kontakt,
+body.contact {
     h1 {
         margin-top: @magicNumber * 2;
         margin-bottom: @magicNumber * 2;
     }
 }
 
-body.page-template-default .main {
+body.page-template-default .main,
+body.page-template .main {
     .column(12);
     
     h1 {
@@ -267,11 +293,13 @@ body.page-template-default .main {
     }
 }
 
-body.page-template-default .sidebar-right {
+body.page-template-default .sidebar-right,
+body.page-template .sidebar-right {
     .column(12);
 }
 
-body.home .main {
+body.home .main,
+body.lang-en.probe-solutions .main {
     .column(24);
 }
 
@@ -286,8 +314,12 @@ body.home .sidebar-right {
  *  Footer
  */
 .outer-wrap-footer {
-    background-image: url("/images/v2/bottom.jpg");
+    //background-image: url("/images/v2/bottom.jpg");
+    //background-repeat: repeat-x;
+    //background-position: bottom;
     padding-bottom: 0;
+    color: #9EBBD2;
+    background: linear-gradient(to bottom, #9EBBD2, #9EBBD2 80%, @bgColorHtml);
 }
 
 .site-footer {
