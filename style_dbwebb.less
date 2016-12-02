@@ -1,7 +1,7 @@
 /** 
 * Grillcon theme.
 */
-@import url(style.less);
+@import url(modules.less);
 
 
 
@@ -47,6 +47,15 @@
     #vgrid .row();
 }
 
+html.vgrid .inner-wrap {
+    @gridImage: "../img/theme/vertical-grid/grid950x24x30x10-nomargin.png";
+    #vgrid .showGrid(1100px, @gridImage);
+
+    &.inner-wrap-header {
+        #vgrid .showGrid(100%, @gridImage);
+    }
+}
+
 
 
 /** --------------------------------------------------------------
@@ -63,9 +72,9 @@ body {
 .typographyTableElements();
 .typographyOtherElements();
 
-.inner-wrap-main {
-    //@gridImage: "../img/theme/typographic-grid/magic-number-24.png";
-    //#hgrid .showGrid(@gridImage);
+html.hgrid .inner-wrap {
+    @gridImage: "../img/theme/typographic-grid/magic-number-24.png";
+    #hgrid .showGrid(@gridImage);
 }
 
 
