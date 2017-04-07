@@ -1,0 +1,30 @@
+{
+  "name": "theme-generic",
+  "version": "1.0.0",
+  "description": "Basis for themes",
+  "main": "\"\"",
+  "dependencies": {
+    "csslint": "^1.0.5",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosbth/theme-generic.git"
+  },
+  "keywords": [
+    "css",
+    "less",
+    "theme"
+  ],
+  "author": "Mikael Roos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mosbth/theme-generic/issues"
+  },
+  "homepage": "https://github.com/mosbth/theme-generic#readme"
+}
